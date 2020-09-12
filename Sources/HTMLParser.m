@@ -3068,6 +3068,7 @@ static inline NSDictionary * ElementTypesForSpecificScope(NSArray *additionalHTM
     NSUInteger i;
     HTMLNode *parent = [self appropriatePlaceForInsertingANodeWithOverrideTarget:overrideTarget index:&i];
     [[parent mutableChildren] insertObject:node atIndex:i];
+    node.parentElement = (HTMLElement*)parent;
 }
 
 - (void)insertForeignElementForToken:(id)token inNamespace:(HTMLNamespace)namespace
